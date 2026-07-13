@@ -2659,7 +2659,11 @@ form {
   font-size: 3.2rem;
   /* Balanced size for single line */
   letter-spacing: -2px;
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
   line-height: 1.05;
   margin-bottom: 1.5rem;
   display: inline-block;
