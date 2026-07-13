@@ -1,5 +1,5 @@
-// api/contact.js - Secure contact form submission handler running on Vercel
-const nodemailer = require('nodemailer');
+// api/contact.js - Secure contact form submission handler running on Vercel via Resend
+const { Resend } = require('resend');
 
 // In-memory rate limiting map (IP -> array of submission timestamps)
 const rateLimitMap = new Map();
@@ -48,7 +48,7 @@ module.exports = async (req, res) => {
   // 1. Ensure method is POST
   if (req.method !== 'POST') {
     res.setHeader('Allow', ['POST']);
-    return res.status(455).json({ status: 'error', message: 'Method Not Allowed' });
+    return res.status(405).json({ status: 'error', message: 'Method Not Allowed. Please send a POST request.' });
   }
 
   // 2. Extract client IP and evaluate rate limiting
@@ -56,7 +56,7 @@ module.exports = async (req, res) => {
   if (isRateLimited(clientIP)) {
     return res.status(429).json({ 
       status: 'error', 
-      message: 'Too many requests. Please try again in a minute.' 
+      message: 'Too many submissions. Please wait a minute and try again.' 
     });
   }
 
@@ -71,8 +71,20 @@ module.exports = async (req, res) => {
   const cleanMessage = escapeHtml(message ? message.trim() : '');
 
   // Validation checks
-  if (!cleanName || !cleanPhone || !cleanEmail || !cleanService || !cleanMessage) {
-    return res.status(400).json({ status: 'error', message: 'All fields are required.' });
+  if (!cleanName) {
+    return res.status(400).json({ status: 'error', message: 'Full Name is required.' });
+  }
+  if (!cleanPhone) {
+    return res.status(400).json({ status: 'error', message: 'Phone Number is required.' });
+  }
+  if (!cleanEmail) {
+    return res.status(400).json({ status: 'error', message: 'Email Address is required.' });
+  }
+  if (!cleanService) {
+    return res.status(400).json({ status: 'error', message: 'Service Selection is required.' });
+  }
+  if (!cleanMessage) {
+    return res.status(400).json({ status: 'error', message: 'Message is required.' });
   }
 
   // Validate email address format
@@ -87,31 +99,19 @@ module.exports = async (req, res) => {
     return res.status(400).json({ status: 'error', message: 'Please enter a valid phone number.' });
   }
 
-  // 4. Connect to Hostinger SMTP using Nodemailer
-  const smtpHost = process.env.SMTP_HOST;
-  const smtpPort = parseInt(process.env.SMTP_PORT, 10);
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPassword = process.env.SMTP_PASSWORD;
-  const mailTo = process.env.MAIL_TO || 'info@nxt-gen.in';
+  // 4. Configure Resend connection
+  const resendApiKey = process.env.RESEND_API_KEY;
+  const fromEmail = process.env.RESEND_FROM_EMAIL || 'info@nxt-gen.in';
 
-  if (!smtpHost || !smtpPort || !smtpUser || !smtpPassword) {
-    console.error('SMTP Configuration missing from environment variables.');
-    return res.status(500).json({ status: 'error', message: 'Something went wrong. Please try again later.' });
+  if (!resendApiKey) {
+    console.error('RESEND_API_KEY environment variable is not defined.');
+    return res.status(500).json({ 
+      status: 'error', 
+      message: 'Email service configuration error on server. Please try again later.' 
+    });
   }
 
-  const transporter = nodemailer.createTransport({
-    host: smtpHost,
-    port: smtpPort,
-    secure: smtpPort === 465, // True for 465, false for 587
-    auth: {
-      user: smtpUser,
-      pass: smtpPassword,
-    },
-    // Enforce strict TLS matching to avoid self-signed cert blocks on Vercel
-    tls: {
-      rejectUnauthorized: true,
-    }
-  });
+  const resend = new Resend(resendApiKey);
 
   // 5. Gather Date, Time, and Environment Metadata
   const now = new Date();
@@ -125,7 +125,9 @@ module.exports = async (req, res) => {
 
   // 6. Build the email body layout exactly as specified
   const emailBody = `==================================================
+
 NEW WEBSITE ENQUIRY
+
 ==================================================
 
 Full Name:
@@ -159,25 +161,76 @@ ${userAgent}
 
 ==================================================`;
 
-  // 7. Configure Mail Options
-  const mailOptions = {
-    from: `"NXTGEN Solutions Website" <${smtpUser}>`,
-    to: mailTo,
-    replyTo: `"${cleanName}" <${cleanEmail}>`,
-    subject: 'New Enquiry from NXTGEN Solutions Website',
-    text: emailBody,
-  };
+  // 7. Build HTML content for the customer's auto-confirmation receipt
+  const customerHtmlContent = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333333; background-color: #f4f6f9; margin: 0; padding: 20px; }
+    .container { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; }
+    .header { background: linear-gradient(135deg, #2563EB, #10B981); padding: 30px; text-align: center; color: #ffffff; }
+    .header h2 { margin: 0; font-size: 24px; font-weight: 800; letter-spacing: 0.5px; }
+    .header p { margin: 5px 0 0; font-size: 14px; opacity: 0.9; }
+    .content { padding: 30px; line-height: 1.6; font-size: 15px; }
+    .service-highlight { background: #f8fafc; border-left: 4px solid #2563EB; padding: 12px 15px; border-radius: 4px; margin: 15px 0; font-weight: bold; color: #1e293b; }
+    .footer { background: #0f172a; padding: 20px; text-align: center; color: #94a3b8; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>NXTGEN SOLUTIONS</h2>
+      <p>Enquiry Confirmation</p>
+    </div>
+    <div class="content">
+      <p>Dear ${cleanName},</p>
+      <p>Thank you for reaching out to NXTGEN SOLUTIONS. We have successfully received your enquiry regarding:</p>
+      <div class="service-highlight">${cleanService}</div>
+      <p>Our expert advisory team is currently reviewing your request and will contact you within one business day with details and next steps.</p>
+      <p>If you have any urgent questions, please feel free to reply directly to this email or call us at +91 99415 88344.</p>
+      <p>Best regards,<br><strong>NXTGEN SOLUTIONS Advisory Team</strong></p>
+    </div>
+    <div class="footer">
+      This is an automated receipt confirmation from NXTGEN SOLUTIONS.<br>
+      Office: 7/222/P5, V.S. Residency, N.N Palayam, Pattanam, Coimbatore - 641016<br>
+      &copy; 2026 NXTGEN SOLUTIONS. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>`;
 
-  // 8. Deliver Email and Handle Responses
+  // 8. Deliver emails via Resend
   try {
-    await transporter.sendMail(mailOptions);
+    // A. Send Notification to NXTGEN SOLUTIONS Admin
+    await resend.emails.send({
+      from: `NXTGEN Solutions Website <${fromEmail}>`,
+      to: 'info@nxt-gen.in',
+      replyTo: `"${cleanName}" <${cleanEmail}>`,
+      subject: 'New Website Enquiry - NXTGEN SOLUTIONS',
+      text: emailBody,
+    });
+
+    // B. Send Auto-confirmation to Customer
+    try {
+      await resend.emails.send({
+        from: `NXTGEN Solutions <${fromEmail}>`,
+        to: cleanEmail,
+        subject: 'We have received your enquiry - NXTGEN SOLUTIONS',
+        html: customerHtmlContent,
+      });
+    } catch (custError) {
+      // Log auto-confirm error but do not fail the overall submission (admin email was delivered)
+      console.error('Error sending auto-confirmation receipt to customer:', custError);
+    }
+
     return res.status(200).json({ 
       status: 'success', 
-      message: '✓ Thank you! Your enquiry has been submitted successfully. Our team will contact you within one business day.' 
+      message: 'Thank you. Your enquiry has been submitted successfully. Our team will contact you shortly.' 
     });
   } catch (error) {
-    // Log the actual exception strictly on the server side
-    console.error('SMTP Mail Transmission Error:', error);
+    // Log the actual exception strictly on the server side for debugging
+    console.error('Resend API transmission error:', error);
     return res.status(500).json({ 
       status: 'error', 
       message: 'Something went wrong. Please try again later.' 

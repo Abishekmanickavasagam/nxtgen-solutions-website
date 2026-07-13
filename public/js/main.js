@@ -314,7 +314,7 @@ function initFormValidation() {
             if (successContainer) {
               const successText = successContainer.querySelector('p');
               if (successText) {
-                successText.textContent = 'Thank you! Your enquiry has been submitted successfully. Our team will contact you within one business day.';
+                successText.textContent = 'Thank you. Your enquiry has been submitted successfully. Our team will contact you shortly.';
               }
               const successHeading = successContainer.querySelector('h3');
               if (successHeading) {
@@ -325,7 +325,7 @@ function initFormValidation() {
             } else {
               const success = document.createElement('div');
               success.className = 'success-msg';
-              success.innerHTML = '<h3>✓ Enquiry Submitted</h3><p>Thank you! Your enquiry has been submitted successfully. Our team will contact you within one business day.</p>';
+              success.innerHTML = '<h3>✓ Enquiry Submitted</h3><p>Thank you. Your enquiry has been submitted successfully. Our team will contact you shortly.</p>';
               form.parentElement.appendChild(success);
               form.remove();
             }
