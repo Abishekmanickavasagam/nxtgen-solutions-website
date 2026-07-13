@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NxtGen Solutions | Enterprise Cybersecurity & Technology Solutions</title>
+  <meta name="description" content="NxtGen Solutions provides enterprise cybersecurity, identity governance, cloud security, physical security, managed security services, and technology consulting backed by over 27 years of industry expertise." />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Constellation Network Nodes Background Canvas -->
+  <canvas id="bg-network-canvas"></canvas>
+
+  <!-- Floating background decorations -->
+  <div class="bg-decorations-container" style="position:fixed; top:0; left:0; width:100vw; height:100vh; pointer-events:none; z-index:0; overflow:hidden;">
+    <div class="bg-gradient-orb" style="top:15%; left:-10%; width:400px; height:400px; background:var(--primary); filter:blur(150px); opacity:0.05;"></div>
+    <div class="bg-gradient-orb" style="bottom:20%; right:-15%; width:500px; height:500px; background:var(--secondary); filter:blur(150px); opacity:0.05;"></div>
+    
+    <!-- Hexagon wireframe -->
+    <div class="bg-tech-pattern" style="top: 15%; right: 12%; width: 120px; height: 120px; animation-delay: -3s;">
+      <svg viewBox="0 0 100 100" fill="none" stroke="var(--primary)" stroke-width="1.2" style="width:100%; height:100%;">
+        <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" stroke-dasharray="3 3"/>
+      </svg>
+    </div>
+    <!-- Shield outline -->
+    <div class="bg-tech-pattern" style="bottom: 30%; left: 8%; width: 100px; height: 100px; animation-delay: -7s;">
+      <svg viewBox="0 0 100 100" fill="none" stroke="var(--secondary)" stroke-width="1.2" style="width:100%; height:100%;">
+        <path d="M50,10 C70,10 85,20 85,45 C85,65 65,85 50,90 C35,85 15,65 15,45 C15,20 30,10 50,10 Z" stroke-dasharray="4 4"/>
+      </svg>
+    </div>
+    <!-- Access control icon / target rings -->
+    <div class="bg-tech-pattern" style="top: 50%; left: 45%; width: 150px; height: 150px; animation-delay: -11s; opacity:0.03;">
+      <svg viewBox="0 0 100 100" fill="none" stroke="var(--accent)" stroke-width="1" style="width:100%; height:100%;">
+        <circle cx="50" cy="50" r="40"/>
+        <circle cx="50" cy="50" r="25" stroke-dasharray="2 2"/>
+        <path d="M50 10 L50 90 M10 50 L90 50" stroke-width="0.8"/>
+      </svg>
+    </div>
+  </div>
+
+  <header>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; flex-direction: row; align-items: center; gap: 6px; text-decoration: none; margin-left: -60px;">
+        <img src="images/nxtgen-logo.png" alt="NxtGen Solutions Logo" class="logo-img" style="height: 58px; width: 58px; object-fit: contain; border-radius: 50%; display: block; flex-shrink: 0;" />
+        <div class="logo-text-group" style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1;">
+          <span class="logo-nxt" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.35rem; letter-spacing: -0.5px; background: linear-gradient(135deg, #2563EB, #10B981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">NXTGEN</span>
+          <span class="logo-info" style="font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 0.62rem; color: #64748B; letter-spacing: 4px; text-transform: uppercase; margin-top: 1px;">SOLUTIONS</span>
+        </div>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">HOME</a></li>
+        <li><a href="about.html" class="nav-link" id="nav-about">ABOUT US</a></li>
+        <li><a href="services.html" class="nav-link" id="nav-services">SERVICES</a></li>
+        <li><a href="contact.html" class="nav-link" id="nav-contact">CONTACT US</a></li>
+        <li><a href="contact.html" class="nav-cta">ENQUIRY NOW</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="bg-decorations-container">
+  <!--#include virtual="components/bg-decorations.html" -->
+</div>
+
+  <!-- Index Hero Section -->
+  <section class="index-hero" data-anim="fade-up">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="container index-hero-container">
+      <div class="index-hero-content fade-in">
+        <h1 class="index-hero-title reveal-title">NXTGEN - SOLUTIONS</h1>
+        <p class="index-hero-subtitle">Enterprise <span class="text-highlight">Cybersecurity, IAM</span> & Technology Implementations Partner</p>
+        <p class="index-hero-text">
+          We deliver enterprise-grade identity governance, network perimeter safeguards, threat monitoring, cloud workload security, and facility infrastructure integrations backed by over 27 years of enterprise cybersecurity and technology implementation expertise.
+        </p>
+        <div class="index-hero-cta">
+          <a href="services.html" class="btn btn-primary btn-magnetic">Explore Implementations <i data-lucide="arrow-right" style="width:16px; height:16px; transition: transform 0.3s ease;"></i></a>
+          <a href="contact.html" class="btn btn-outline btn-magnetic">Submit Enquiry</a>
+        </div>
+      </div>
+      <div class="index-hero-illustration fade-in">
+        <!-- Floating Ecosystem Badges -->
+        <div class="floating-badge badge-1" title="Threat Monitoring Operations">
+          <i data-lucide="monitor-play"></i>
+        </div>
+        <div class="floating-badge badge-2" title="Perimeter Firewall Protection">
+          <i data-lucide="shield-alert"></i>
+        </div>
+        <div class="floating-badge badge-3" title="Identity Access Management">
+          <i data-lucide="key-round"></i>
+        </div>
+        <div class="floating-badge badge-4" title="Cloud Network Guard">
+          <i data-lucide="cloud-lock"></i>
+        </div>
+        <div class="floating-badge badge-5" title="Physical Infrastructure Safeguards">
+          <i data-lucide="server"></i>
+        </div>
+        <div class="floating-badge badge-2" title="Facility Systems Technology" style="top: 30%; left: -35px; animation-delay: -1s;">
+          <i data-lucide="building" style="color: var(--accent);"></i>
+        </div>
+        <div class="floating-badge badge-4" title="Network Topology & SD-WAN" style="bottom: 40%; left: 10%; animation-delay: -4.5s;">
+          <i data-lucide="network" style="color: var(--primary);"></i>
+        </div>
+        
+        <div id="hero-canvas-container">
+          <canvas id="hero-canvas"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider Slanted Hero -> Trust -->
+  <div class="section-divider">
+    <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="transform: translateY(1px);">
+      <path d="M0,0 L1440,60 L1440,60 L0,60 Z" fill="#FAFBFC"></path>
+    </svg>
+  </div>
+
+  <!-- SECTION 1: Trust & Experience -->
+  <section class="section container" style="position:relative;">
+    <!-- Background visual decorations -->
+    <div class="bg-gradient-orb" style="top: 10%; left: 5%; width: 250px; height: 250px; background: var(--secondary);"></div>
+    <div class="bg-tech-pattern" style="top: 20%; right: 5%; width: 120px; height: 120px;">
+      <svg viewBox="0 0 100 100" fill="none" stroke="var(--primary)" stroke-width="1.5" style="width:100%; height:100%;">
+        <circle cx="50" cy="50" r="30" stroke-dasharray="4 4"/>
+        <path d="M50 10 L50 90 M10 50 L90 50" opacity="0.5"/>
+      </svg>
+    </div>
+
+    <h2 class="section-title-premium-center fade-in">Trust & Experience</h2>
+    <div class="grid grid-4 counters" style="position:relative; z-index:2;">
+      <!-- Card 1 -->
+      <div class="gradient-border-card reveal-card" style="text-align:center;">
+        <div class="premium-card-icon" style="width:50px; height:50px; background:rgba(37,99,235,0.06); border-radius:12px; display:flex; align-items:center; justify-content:center; color:var(--primary); margin:0 auto 1.25rem;">
+          <i data-lucide="calendar" class="icon-float-animate"></i>
+        </div>
+        <h3 class="counter-card" data-target="2026" data-suffix="" style="font-size:2rem; font-weight:900; color:var(--primary); margin-bottom:0.5rem;">0</h3>
+        <h4 style="font-size:1.05rem; margin-bottom:0.5rem; color:var(--text); font-weight:700;">Founded</h4>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0; line-height:1.6;">Established in 2026 delivering enterprise security and advanced technology implementations.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="gradient-border-card reveal-card" style="text-align:center;">
+        <div class="premium-card-icon" style="width:50px; height:50px; background:rgba(20,184,166,0.06); border-radius:12px; display:flex; align-items:center; justify-content:center; color:var(--secondary); margin:0 auto 1.25rem;">
+          <i data-lucide="award" class="icon-float-animate"></i>
+        </div>
+        <h3 class="counter-card" data-target="27" data-suffix="+" style="font-size:2rem; font-weight:900; color:var(--secondary); margin-bottom:0.5rem;">0</h3>
+        <h4 style="font-size:1.05rem; margin-bottom:0.5rem; color:var(--text); font-weight:700;">Years Industry Experience</h4>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0; line-height:1.6;">Management team with over 27+ years of Cyber Security and Technology expertise.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="gradient-border-card reveal-card" style="text-align:center;">
+        <div class="premium-card-icon" style="width:50px; height:50px; background:rgba(245,158,11,0.06); border-radius:12px; display:flex; align-items:center; justify-content:center; color:var(--accent); margin:0 auto 1.25rem;">
+          <i data-lucide="cpu" class="icon-float-animate"></i>
+        </div>
+        <h3 style="font-size:1.5rem; font-weight:800; color:var(--accent); margin-top:0.5rem; margin-bottom:0.75rem; line-height:1.2;">Enterprise Security</h3>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0; line-height:1.6;">Identity Governance (IAM), Network Firewalls, Cloud Protection, SIEM/SOC and VAPT.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="gradient-border-card reveal-card" style="text-align:center;">
+        <div class="premium-card-icon" style="width:50px; height:50px; background:rgba(37,99,235,0.06); border-radius:12px; display:flex; align-items:center; justify-content:center; color:var(--primary); margin:0 auto 1.25rem;">
+          <i data-lucide="phone-call" class="icon-float-animate"></i>
+        </div>
+        <h3 style="font-size:1.5rem; font-weight:800; color:var(--primary); margin-top:0.5rem; margin-bottom:0.75rem; line-height:1.2;">Consulting & Managed</h3>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0; line-height:1.6;">Tailored security strategies, 24/7 managed services, and professional integration guidance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider Curved Trust -> Tech & Access Implementations -->
+  <div class="section-divider">
+    <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 Q360,60 720,30 T1440,30 L1440,60 L0,60 Z" fill="#F1F7FF"></path>
+    </svg>
+  </div>
+
+  <section class="services-tech-section" style="position:relative;">
+    <div class="container" style="position:relative; z-index:2;">
+      <h2 class="section-title-premium-center fade-in">Technology & Access Implementations</h2>
+      <p style="text-align:center; color:var(--text-muted); margin-top:-0.5rem; margin-bottom:4rem;" class="fade-in">State-of-the-art security, credential, and verification systems for modern operations</p>
+      
+      <div class="grid grid-3">
+        <!-- 1. ID Cards -->
+        <a href="idcard.html" class="tech-premium-card reveal-card tilt-card glow-primary">
+          <div class="tilt-card-inner">
+            <div class="tech-card-icon icon-float-animate">
+              <i data-lucide="contact" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3>ID Cards</h3>
+            <p>
+              High durability plastic identity printing, school student cards, corporate badges, and holders supply.
+            </p>
+          </div>
+        </a>
+
+        <!-- 2. Access Cards (with rfid pulse rings) -->
+        <a href="accesscard.html" class="tech-premium-card reveal-card tilt-card glow-secondary">
+          <div class="tilt-card-inner">
+            <div class="tech-card-icon icon-rfid-animate">
+              <i data-lucide="credit-card" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3>Access Control</h3>
+            <p>
+              Smart RFID encoders supply, Mifare access configurations, card printing, and security key programming.
+            </p>
+          </div>
+        </a>
+
+        <!-- 3. Biometrics -->
+        <a href="biometrics.html" class="tech-premium-card reveal-card tilt-card glow-accent">
+          <div class="tilt-card-inner">
+            <div class="tech-card-icon icon-fingerprint-animate">
+              <i data-lucide="fingerprint" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3>Biometrics</h3>
+            <p>
+              Contactless face recognition scanners, automated biometric logs database setups, and readers sync paths.
+            </p>
+          </div>
+        </a>
+
+        <!-- 4. CCTV Surveillance -->
+        <a href="cctv.html" class="tech-premium-card reveal-card tilt-card glow-primary">
+          <div class="tilt-card-inner">
+            <div class="tech-card-icon icon-cctv-animate">
+              <i data-lucide="video" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3>CCTV Implementations</h3>
+            <p>
+              Network IP camera mounting, NVR configurations, remote client dashboard access, and alarm setups.
+            </p>
+          </div>
+        </a>
+
+        <!-- 5. VAPT Services -->
+        <a href="vapt.html" class="tech-premium-card reveal-card tilt-card glow-secondary">
+          <div class="tilt-card-inner">
+            <div class="tech-card-icon icon-shield-animate">
+              <i data-lucide="shield-check" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3>VAPT Audits</h3>
+            <p>
+              Vulnerability scans, corporate network checks, local server configs, and ethical network diagnostic logs.
+            </p>
+          </div>
+        </a>
+
+        <!-- 6. Corporate Security Implementations -->
+        <a href="services.html#physical-infra" class="tech-premium-card reveal-card tilt-card glow-accent">
+          <div class="tilt-card-inner">
+            <div class="tech-card-icon icon-float-animate">
+              <i data-lucide="building" style="width: 24px; height: 24px;"></i>
+            </div>
+            <h3>Corporate Security</h3>
+            <p>
+              Secure physical parameter designs, system architecture configurations, audits, and network path checks.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div style="text-align:center; margin-top:3.5rem;">
+        <a href="services.html" class="btn btn-primary btn-magnetic fade-in">All Services <i data-lucide="arrow-right" style="width:16px; height:16px; transition: transform 0.3s ease;"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider Slanted Tech & Access -> Why Choose Us -->
+  <div class="section-divider" style="transform: rotate(180deg) translateY(1px);">
+    <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 L1440,60 L1440,60 L0,60 Z" fill="#ffffff"></path>
+    </svg>
+  </div>
+
+
+  <!-- SECTION: Why Choose NxtGen-Solutions -->
+  <section class="section bg-light-bg" style="position:relative;">
+    <!-- Background visual decorations -->
+    <div class="bg-gradient-orb" style="bottom: 10%; right: 10%; width: 320px; height: 320px; background: var(--accent);"></div>
+    <div class="bg-tech-pattern" style="top: 15%; left: 3%; width: 140px; height: 140px;"></div>
+
+    <div class="container" style="position:relative; z-index:2;">
+      <h2 class="section-title-premium-center fade-in">Why Choose NxtGen-Solutions</h2>
+      <p class="fade-in" style="text-align:center; color:var(--text-muted); margin-bottom:4rem;">Trusted Digital Services, Security Implementations and Technology Expertise</p>
+      <div class="grid grid-4" style="gap:2rem;">
+        <!-- Card 1 -->
+        <div class="esevai-premium-card reveal-card tilt-card glow-primary" style="text-align:center; align-items:center;">
+          <div class="tilt-card-inner">
+            <div class="esevai-card-icon icon-float-animate" style="margin:0 auto 1.25rem;">
+              <i data-lucide="shield" style="width:20px; height:20px;"></i>
+            </div>
+            <h4>Enterprise Trust</h4>
+            <p>High-security safeguards, regulatory compliance alignment, and secure handling of corporate assets.</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="esevai-premium-card reveal-card tilt-card glow-secondary" style="text-align:center; align-items:center;">
+          <div class="tilt-card-inner">
+            <div class="esevai-card-icon icon-float-animate" style="margin:0 auto 1.25rem;">
+              <i data-lucide="cpu" style="width:20px; height:20px;"></i>
+            </div>
+            <h4>Technology Integration</h4>
+            <p>Advanced IAM orchestration, network firewalls, CCTV deployments, and custom security workflows.</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="esevai-premium-card reveal-card tilt-card glow-accent" style="text-align:center; align-items:center;">
+          <div class="tilt-card-inner">
+            <div class="esevai-card-icon icon-float-animate" style="margin:0 auto 1.25rem;">
+              <i data-lucide="key" style="width:20px; height:20px;"></i>
+            </div>
+            <h4>27+ Years of Experience</h4>
+            <p>Management team with 27+ years of cyber threat intelligence and global security operations leadership.</p>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="esevai-premium-card reveal-card tilt-card glow-accent" style="text-align:center; align-items:center;">
+          <div class="tilt-card-inner">
+            <div class="esevai-card-icon icon-float-animate" style="margin:0 auto 1.25rem;">
+              <i data-lucide="headset" style="width:20px; height:20px;"></i>
+            </div>
+            <h4>Security Consulting</h4>
+            <p>Dedicated consulting, readiness audits, risk management, and post-implementation reviews.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Divider Curved CTA -->
+  <div class="section-divider">
+    <svg viewBox="0 0 1440 60" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 Q360,60 720,30 T1440,30 L1440,60 L0,60 Z" fill="#2563EB"></path>
+    </svg>
+  </div>
+
+
+  <!-- Premium CTA Strip Above Footer -->
+  <section class="footer-cta-strip gradient-flow-animate" style="position:relative;">
+    <!-- Floating decorative background icons -->
+    <i data-lucide="fingerprint" class="cta-floating-badge" style="top:15%; left:6%; width:40px; height:40px;"></i>
+    <i data-lucide="video" class="cta-floating-badge" style="bottom:15%; right:8%; width:45px; height:45px; animation-delay:-2.5s;"></i>
+    <i data-lucide="shield" class="cta-floating-badge" style="top:35%; right:22%; width:35px; height:35px; animation-delay:-5s;"></i>
+    
+    <div class="container footer-cta-container" style="position:relative; z-index:2;">
+      <div class="footer-cta-content">
+        <h3>Need Assistance?</h3>
+        <p>Have questions about Enterprise Security, Identity Management, Cloud Protection, or Consulting services?</p>
+      </div>
+      <div class="footer-cta-actions">
+        <a href="contact.html" class="btn btn-dark-filled" style="box-shadow: 0 4px 15px rgba(15,23,42,0.2);">Contact Us</a>
+        <a href="contact.html" class="btn btn-glass-outline">Submit Enquiry</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Dark Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <!-- Column 1: Logo & Info -->
+      <div class="footer-col">
+        <div class="footer-logo" style="display: flex; flex-direction: row; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 1rem;">
+          <img src="images/nxtgen-logo.png" alt="NxtGen Solutions Logo" style="height: 48px; width: 48px; object-fit: contain; border-radius: 50%; display: block; flex-shrink: 0;" />
+          <div style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1;">
+            <span class="logo-nxt" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.35rem; letter-spacing: -0.5px; background: linear-gradient(135deg, #2563EB, #10B981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">NXTGEN</span>
+            <span class="logo-info" style="font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 0.62rem; color: #cbd5e1; letter-spacing: 4px; text-transform: uppercase; margin-top: 1px;">SOLUTIONS</span>
+          </div>
+        </div>
+        <p class="footer-description" style="margin-top: 1rem;">
+          Enterprise Security Implementations & Technology Consulting Partner. Management Team with Over 27 Years of Enterprise Cybersecurity and Technology Consulting Experience.
+        </p>
+      </div>
+      
+      <!-- Column 2: Quick Links -->
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 3: Services & Implementations -->
+      <div class="footer-col">
+        <h3>Services & Implementations</h3>
+        <ul>
+          <li><a href="services.html#card-perimeter">Perimeter Security</a></li>
+          <li><a href="services.html#card-iam">Identity & Access (IAM)</a></li>
+          <li><a href="services.html#card-soc">SIEM & SOC operations</a></li>
+          <li><a href="services.html#card-cloud">Cloud Security</a></li>
+          <li><a href="services.html#card-vapt">VAPT Auditing</a></li>
+          <li><a href="services.html#physical-infra">Physical Security Implementations</a></li>
+          <li><a href="services.html#card-netsupport">Network Support Services</a></li>
+          <li><a href="services.html#card-managed">Managed Security (MSSP)</a></li>
+          <li><a href="services.html#card-consulting">Security Consulting</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 4: Contact & Hours -->
+      <div class="footer-col">
+        <h3>Contact Info</h3>
+        <p><i data-lucide="phone" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:0.5rem; color:var(--secondary);"></i> +91 99415 88344</p>
+        <p><i data-lucide="mail" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:0.5rem; color:var(--secondary);"></i> <a href="mailto:info@nxt-gen.in" style="color:inherit; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='inherit'">info@nxt-gen.in</a></p>
+        <p><i data-lucide="map-pin" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:0.5rem; color:var(--secondary);"></i> 7/222/P5, V.S. Residency, N.N Palayam, Pattanam, Coimbatore - 641016</p>
+        <p><i data-lucide="clock" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:0.5rem; color:var(--secondary);"></i> Mon - Sat: 9:00 AM - 6:00 PM</p>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom Copyright Bar -->
+    <div class="footer-bottom-bar">
+      <div class="footer-bottom-container">
+        <p>© 2026 NxtGen-Solutions. All Rights Reserved.</p>
+        <ul class="footer-legal-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <a href="https://wa.me/919941588344" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="contact.html" class="enquiry-float" aria-label="Enquiry Now">
+    <i data-lucide="send" style="width:20px; height:20px;"></i>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/hero-3d.js"></script>
+  <script src="js/bg-network.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

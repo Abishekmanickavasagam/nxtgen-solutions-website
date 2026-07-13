@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services Hub | NxtGen-Solutions</title>
+  <meta name="description" content="NxtGen-Solutions Services Hub. Explore our enterprise cybersecurity, identity access management, cloud workload protection, managed services, physical infrastructure integrations, and consulting portfolios." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Constellation Network Nodes Background Canvas -->
+  <canvas id="bg-network-canvas"></canvas>
+
+  <!-- Floating background decorations -->
+  <div class="bg-decorations-container" style="position:fixed; top:0; left:0; width:100vw; height:100vh; pointer-events:none; z-index:0; overflow:hidden;">
+    <div class="bg-gradient-orb" style="top:15%; left:-10%; width:400px; height:400px; background:var(--primary); filter:blur(150px); opacity:0.05;"></div>
+    <div class="bg-gradient-orb" style="bottom:20%; right:-15%; width:500px; height:500px; background:var(--secondary); filter:blur(150px); opacity:0.05;"></div>
+  </div>
+
+  <header>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo" style="display: flex; flex-direction: row; align-items: center; gap: 6px; text-decoration: none; margin-left: -60px;">
+        <img src="images/nxtgen-logo.png" alt="NxtGen Solutions Logo" class="logo-img" style="height: 58px; width: 58px; object-fit: contain; border-radius: 50%; display: block; flex-shrink: 0;" />
+        <div class="logo-text-group" style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1;">
+          <span class="logo-nxt" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.35rem; letter-spacing: -0.5px; background: linear-gradient(135deg, #2563EB, #10B981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">NXTGEN</span>
+          <span class="logo-info" style="font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 0.62rem; color: #64748B; letter-spacing: 4px; text-transform: uppercase; margin-top: 1px;">SOLUTIONS</span>
+        </div>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">HOME</a></li>
+        <li><a href="about.html" class="nav-link">ABOUT US</a></li>
+        <li><a href="services.html" class="nav-link active">SERVICES</a></li>
+        <li><a href="contact.html" class="nav-link">CONTACT US</a></li>
+        <li><a href="contact.html" class="nav-cta">ENQUIRY NOW</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Services Hub Hero Section -->
+<section class="hero hero--sub" data-anim="fade-up" style="padding: 4.5rem 0 3.5rem;">
+  <div class="hero-content">
+    <h1 class="hero-title" style="font-size: 2.2rem; margin-bottom: 0.5rem;">Services Workspace</h1>
+    <p class="hero-subtitle" style="font-size: 0.95rem;">Interactive NotebookLM-style environment for enterprise security implementations</p>
+    <div class="breadcrumb" style="margin-top: 0.75rem;">
+      <a href="index.html">Home</a> &gt; <span>Services</span>
+    </div>
+  </div>
+</section>
+
+
+    <!-- NotebookLM Workspace Shell -->
+    <div class="notebook-workspace">
+      
+    <!-- Sidebar Navigation -->
+    <div class="notebook-sidebar">
+      <div style="margin-bottom: 1.5rem;">
+        <span class="badge" style="background: rgba(37, 99, 235, 0.1); color: var(--primary); padding: 0.4rem 0.8rem; border-radius: 50px; font-size: 0.72rem; font-weight: 700; display: inline-block; border: 1px solid rgba(16, 185, 129, 0.2);">WORKSPACE SOURCES</span>
+        <h2 style="font-size: 1.15rem; font-weight: 800; color: #ffffff; margin-top: 0.5rem; margin-bottom: 0.25rem;">NxtGen Implementations</h2>
+        <p style="font-size: 0.75rem; color: #64748b; margin-bottom: 0;">Click a category folder to load the mind-map, or select a source item below.</p>
+      </div>
+      <div style="flex: 1; overflow-y: auto; margin-right: -0.5rem; padding-right: 0.5rem;">
+        
+        <!-- Folder Category: Cyber Security -->
+        <div class="sidebar-folder" id="cyber-security">
+          <div class="sidebar-folder-header" id="folder-header-cyber-security" onclick="toggleSidebarFolder('cyber-security', event)">
+            <div style="display: flex; align-items: center; gap: 0.5rem; overflow: hidden;">
+              <i data-lucide="shield-alert" style="width: 16px; height: 16px; color: var(--primary); flex-shrink: 0;"></i>
+              <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Cyber Security</span>
+            </div>
+            <i data-lucide="chevron-down" class="folder-chevron" style="width: 14px; height: 14px; transition: transform 0.3s;"></i>
+          </div>
+          <div class="sidebar-folder-content" id="folder-content-cyber-security">
+            
+          <div class="sidebar-item" id="card-perimeter" onclick="selectSourceNode('perimeter', event)">
+            <i data-lucide="shield-alert" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Perimeter Security</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-iam" onclick="selectSourceNode('iam', event)">
+            <i data-lucide="key-round" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Identity & Access (IAM)</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-soc" onclick="selectSourceNode('soc', event)">
+            <i data-lucide="monitor-play" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">SIEM & SOC Operations</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-cloud" onclick="selectSourceNode('cloud', event)">
+            <i data-lucide="cloud-lock" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Cloud Workload Security</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-vapt" onclick="selectSourceNode('vapt', event)">
+            <i data-lucide="shield-check" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">VAPT Auditing</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-endpoint" onclick="selectSourceNode('endpoint', event)">
+            <i data-lucide="shield" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Endpoint Security</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-transformation" onclick="selectSourceNode('transformation', event)">
+            <i data-lucide="refresh-cw" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Cyber Security Transformation</span>
+          </div>
+        
+          </div>
+        </div>
+    
+
+        <!-- Folder Category: Managed & Support Services -->
+        <div class="sidebar-folder" id="managed-support">
+          <div class="sidebar-folder-header" id="folder-header-managed-support" onclick="toggleSidebarFolder('managed-support', event)">
+            <div style="display: flex; align-items: center; gap: 0.5rem; overflow: hidden;">
+              <i data-lucide="monitor-play" style="width: 16px; height: 16px; color: var(--primary); flex-shrink: 0;"></i>
+              <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Managed & Support Services</span>
+            </div>
+            <i data-lucide="chevron-down" class="folder-chevron" style="width: 14px; height: 14px; transition: transform 0.3s;"></i>
+          </div>
+          <div class="sidebar-folder-content" id="folder-content-managed-support">
+            
+          <div class="sidebar-item" id="card-managed" onclick="selectSourceNode('managed', event)">
+            <i data-lucide="shield" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Managed Security (MSSP)</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-netsupport" onclick="selectSourceNode('netsupport', event)">
+            <i data-lucide="network" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Network Support Operations</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-secsupport" onclick="selectSourceNode('secsupport', event)">
+            <i data-lucide="settings" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Security Engineering Administration</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-transition" onclick="selectSourceNode('transition', event)">
+            <i data-lucide="refresh-cw" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Security Lifecycle Transitions</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-fms" onclick="selectSourceNode('fms', event)">
+            <i data-lucide="server" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Facility Management Systems</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-delivery" onclick="selectSourceNode('delivery', event)">
+            <i data-lucide="check-circle" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Security Service Delivery</span>
+          </div>
+        
+          </div>
+        </div>
+    
+
+        <!-- Folder Category: Physical Security Implementations -->
+        <div class="sidebar-folder" id="physical-infra">
+          <div class="sidebar-folder-header" id="folder-header-physical-infra" onclick="toggleSidebarFolder('physical-infra', event)">
+            <div style="display: flex; align-items: center; gap: 0.5rem; overflow: hidden;">
+              <i data-lucide="building" style="width: 16px; height: 16px; color: var(--primary); flex-shrink: 0;"></i>
+              <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Physical Security Implementations</span>
+            </div>
+            <i data-lucide="chevron-down" class="folder-chevron" style="width: 14px; height: 14px; transition: transform 0.3s;"></i>
+          </div>
+          <div class="sidebar-folder-content" id="folder-content-physical-infra">
+            
+          <div class="sidebar-item" id="card-idcard" onclick="selectSourceNode('idcard', event)">
+            <i data-lucide="contact" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">ID Cards Printing</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-accesscard" onclick="selectSourceNode('accesscard', event)">
+            <i data-lucide="credit-card" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Access Card Systems</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-biometric" onclick="selectSourceNode('biometric', event)">
+            <i data-lucide="fingerprint" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Biometric Solutions</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-cctv" onclick="selectSourceNode('cctv', event)">
+            <i data-lucide="video" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">CCTV Surveillance</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-iris" onclick="selectSourceNode('iris', event)">
+            <i data-lucide="eye" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Iris Recognition Systems</span>
+          </div>
+        
+          </div>
+        </div>
+    
+
+        <!-- Folder Category: Consulting & Governance -->
+        <div class="sidebar-folder" id="consulting-gov">
+          <div class="sidebar-folder-header" id="folder-header-consulting-gov" onclick="toggleSidebarFolder('consulting-gov', event)">
+            <div style="display: flex; align-items: center; gap: 0.5rem; overflow: hidden;">
+              <i data-lucide="file-check" style="width: 16px; height: 16px; color: var(--primary); flex-shrink: 0;"></i>
+              <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Consulting & Governance</span>
+            </div>
+            <i data-lucide="chevron-down" class="folder-chevron" style="width: 14px; height: 14px; transition: transform 0.3s;"></i>
+          </div>
+          <div class="sidebar-folder-content" id="folder-content-consulting-gov">
+            
+          <div class="sidebar-item" id="card-consulting" onclick="selectSourceNode('consulting', event)">
+            <i data-lucide="users" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Professional Consulting</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-sow" onclick="selectSourceNode('sow', event)">
+            <i data-lucide="file-text" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">SOW Compliance Alignment</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-sop" onclick="selectSourceNode('sop', event)">
+            <i data-lucide="book-open" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Security Policy & SOPs</span>
+          </div>
+        
+
+          <div class="sidebar-item" id="card-grc" onclick="selectSourceNode('grc', event)">
+            <i data-lucide="file-check" style="width: 14px; height: 14px; flex-shrink: 0;"></i>
+            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">GRC Frameworks Compliance</span>
+          </div>
+        
+          </div>
+        </div>
+    
+      </div>
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1rem; margin-top: 1rem;">
+        <a href="contact.html?service=workspace" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.55rem 1rem; border-radius: 8px; font-weight: 600;">Request Custom Audit</a>
+      </div>
+    </div>
+
+      
+    <!-- Main Content Workspace Area -->
+    <div class="notebook-map-area">
+      <!-- SVG Connecting Lines -->
+      <svg class="notebook-svg-canvas" id="workspace-svg-lines"></svg>
+      
+      <!-- Central Hub Node -->
+      <div class="notebook-center-node" id="workspace-center-node">
+        Cyber Security
+      </div>
+      
+      <!-- Floating Branching Node Groups -->
+      
+        <!-- Node Group for Cyber Security -->
+        <div class="category-nodes-group" id="nodes-cyber-security" style="display: block; width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+          
+          <div class="notebook-child-node" id="node-perimeter" onclick="selectSourceNode('perimeter', event)" style="left: calc(50% + 0.0px); top: calc(50% + -190.0px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="shield-alert" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Perimeter Security</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-iam" onclick="selectSourceNode('iam', event)" style="left: calc(50% + 226.7px); top: calc(50% + -118.5px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="key-round" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Identity & Access (IAM)</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-soc" onclick="selectSourceNode('soc', event)" style="left: calc(50% + 282.7px); top: calc(50% + 42.3px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="monitor-play" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>SIEM & SOC Operations</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-cloud" onclick="selectSourceNode('cloud', event)" style="left: calc(50% + 125.8px); top: calc(50% + 171.2px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="cloud-lock" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Cloud Workload Security</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-vapt" onclick="selectSourceNode('vapt', event)" style="left: calc(50% + -125.8px); top: calc(50% + 171.2px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="shield-check" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>VAPT Auditing</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-endpoint" onclick="selectSourceNode('endpoint', event)" style="left: calc(50% + -282.7px); top: calc(50% + 42.3px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="shield" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Endpoint Security</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-transformation" onclick="selectSourceNode('transformation', event)" style="left: calc(50% + -226.7px); top: calc(50% + -118.5px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="refresh-cw" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Cyber Security Transformation</span>
+          </div>
+        
+        </div>
+    
+
+        <!-- Node Group for Managed & Support Services -->
+        <div class="category-nodes-group" id="nodes-managed-support" style="display: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+          
+          <div class="notebook-child-node" id="node-managed" onclick="selectSourceNode('managed', event)" style="left: calc(50% + 0.0px); top: calc(50% + -190.0px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="shield" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Managed Security (MSSP)</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-netsupport" onclick="selectSourceNode('netsupport', event)" style="left: calc(50% + 251.1px); top: calc(50% + -95.0px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="network" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Network Support Operations</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-secsupport" onclick="selectSourceNode('secsupport', event)" style="left: calc(50% + 251.1px); top: calc(50% + 95.0px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="settings" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Security Engineering Administration</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-transition" onclick="selectSourceNode('transition', event)" style="left: calc(50% + 0.0px); top: calc(50% + 190.0px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="refresh-cw" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Security Lifecycle Transitions</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-fms" onclick="selectSourceNode('fms', event)" style="left: calc(50% + -251.1px); top: calc(50% + 95.0px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="server" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Facility Management Systems</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-delivery" onclick="selectSourceNode('delivery', event)" style="left: calc(50% + -251.1px); top: calc(50% + -95.0px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="check-circle" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Security Service Delivery</span>
+          </div>
+        
+        </div>
+    
+
+        <!-- Node Group for Physical Security Implementations -->
+        <div class="category-nodes-group" id="nodes-physical-infra" style="display: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+          
+          <div class="notebook-child-node" id="node-idcard" onclick="selectSourceNode('idcard', event)" style="left: calc(50% + 0.0px); top: calc(50% + -190.0px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="contact" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>ID Cards Printing</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-accesscard" onclick="selectSourceNode('accesscard', event)" style="left: calc(50% + 275.8px); top: calc(50% + -58.7px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="credit-card" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Access Card Systems</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-biometric" onclick="selectSourceNode('biometric', event)" style="left: calc(50% + 170.5px); top: calc(50% + 153.7px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="fingerprint" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Biometric Solutions</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-cctv" onclick="selectSourceNode('cctv', event)" style="left: calc(50% + -170.5px); top: calc(50% + 153.7px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="video" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>CCTV Surveillance</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-iris" onclick="selectSourceNode('iris', event)" style="left: calc(50% + -275.8px); top: calc(50% + -58.7px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="eye" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Iris Recognition Systems</span>
+          </div>
+        
+        </div>
+    
+
+        <!-- Node Group for Consulting & Governance -->
+        <div class="category-nodes-group" id="nodes-consulting-gov" style="display: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+          
+          <div class="notebook-child-node" id="node-consulting" onclick="selectSourceNode('consulting', event)" style="left: calc(50% + 0.0px); top: calc(50% + -190.0px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="users" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Professional Consulting</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-sow" onclick="selectSourceNode('sow', event)" style="left: calc(50% + 290.0px); top: calc(50% + 0.0px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="file-text" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>SOW Compliance Alignment</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-sop" onclick="selectSourceNode('sop', event)" style="left: calc(50% + 0.0px); top: calc(50% + 190.0px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="book-open" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>Security Policy & SOPs</span>
+          </div>
+        
+
+          <div class="notebook-child-node" id="node-grc" onclick="selectSourceNode('grc', event)" style="left: calc(50% + -290.0px); top: calc(50% + 0.0px); transform: translate(-50%, -50%);">
+            <i class="notebook-child-node-icon" data-lucide="file-check" style="width: 14px; height: 14px; color: var(--secondary);"></i>
+            <span>GRC Frameworks Compliance</span>
+          </div>
+        
+        </div>
+    
+      
+      <!-- Center Guide Overlay -->
+      
+    <!-- Default Workspace Panel -->
+    <div id="workspace-guide-overlay" style="position: absolute; text-align: center; max-width: 480px; z-index: 2; padding: 2rem; pointer-events: none; transition: opacity 0.3s;">
+      <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.15); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+        <i data-lucide="notebook" style="width: 28px; height: 28px; color: var(--primary);"></i>
+      </div>
+      <h3 style="font-size: 1.25rem; font-weight: 800; color: #ffffff; margin-bottom: 0.5rem;">Interactive Security Guide</h3>
+      <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5;">Click any branching node in the mind-map diagram or select a source item from the folders in the left sidebar to view its detailed specifications and technical parameters.</p>
+    </div>
+
+      
+      <!-- AI Security Assistant Chat Console -->
+      <div class="notebook-assistant">
+        <!-- Floating Chat Reply Panel -->
+        <div class="assistant-chat-panel" id="assistant-chat-panel">
+          <div class="chat-panel-header">
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="bot" style="width: 18px; height: 18px; color: var(--primary);"></i>
+              <span style="font-size: 0.8rem; font-weight: 700; color: #ffffff;">SECURITY ASSISTANT</span>
+            </div>
+            <button onclick="closeChatPanel(event)" style="background: transparent; border: none; color: #64748b; font-size: 0.7rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.2rem;"><i data-lucide="minimize-2" style="width:12px; height:12px;"></i> Minimize</button>
+          </div>
+          <div class="chat-history" id="chat-history">
+            <div class="chat-msg bot">
+              <div class="chat-msg-header">Assistant</div>
+              Welcome to your Security Notebook. Select any source document, then use the consulting chips below to ask questions, check business outcomes, or analyze implementations.
+            </div>
+          </div>
+          <div id="chat-typing-indicator" class="chat-typing" style="display: none;">Assistant is analyzing sources...</div>
+        </div>
+        
+        <!-- Predefined consulting chips -->
+        <div class="assistant-chips">
+          <div class="assistant-chip" onclick="handleChipConsult('overview')">Explain Implementation</div>
+          <div class="assistant-chip" onclick="handleChipConsult('technologies')">Supported Technologies</div>
+          <div class="assistant-chip" onclick="handleChipConsult('outcomes')">Business Outcomes</div>
+          <div class="assistant-chip" onclick="handleChipConsult('case')">Show Use Case</div>
+        </div>
+        
+        <!-- Chat Capsule input bar -->
+        <div class="assistant-bar">
+          <input type="text" class="assistant-input" id="assistant-chat-input" placeholder="Ask the Security Consultant about these implementations..." onkeydown="handleChatKeyPress(event)">
+          <button class="assistant-btn" onclick="submitCustomChat()"><i data-lucide="send" style="width:16px; height:16px;"></i></button>
+        </div>
+      </div>
+    </div>
+
+      
+      <!-- Document Spec Sheets (Slide-ins) -->
+      
+        <!-- Document Sheet for Perimeter Security -->
+        <div class="notebook-doc-panel" id="drawer-perimeter">
+          <button class="doc-close-btn" onclick="closeDocPanel('perimeter', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="shield-alert" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Perimeter Security
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Firewalls</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">IPS/IDS</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">SD-WAN</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Zero-Trust</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> We design, deploy, and maintain advanced perimeter network protections that shield your corporate assets from external threat vectors. Our perimeter security implementation guarantees continuous rule auditing, ingress/egress validation, and high-availability configuration.</p>
+                <p style="margin-bottom: 0.6rem;">We replace legacy architectures with modern software-defined network safeguards and secure SD-WAN connections. This enables secure remote connections while minimizing latency for enterprise users.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Next-Gen Firewalls (Palo Alto, Fortinet, Cisco FTD)</li>
+                    <li>Secure Web Gateways & Cloud Access Security Brokers (CASB)</li>
+                    <li>SD-WAN Ingress/Egress Load Balancing</li>
+                    <li>Intrusion Prevention Systems (IPS) with live signatures feeds</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Reduction in unauthorized ingress probe attempts by 99.9%</li>
+                    <li>Unified policy management across distributed office branches</li>
+                    <li>Minimized downtime during network link failovers</li>
+                    <li>Clean regulatory audits validation for perimeter controls compliance</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Migrated a multi-site retail banking network from legacy static firewalls to unified, cloud-managed NGFW nodes with zero operational disruption.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=perimeter" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Identity & Access (IAM) -->
+        <div class="notebook-doc-panel" id="drawer-iam">
+          <button class="doc-close-btn" onclick="closeDocPanel('iam', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="key-round" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Identity & Access (IAM)
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">SSO</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">MFA</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Directory Sync</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Lifecycle</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Implement enterprise identity governance to ensure the right users have appropriate access to authorized resources. Our IAM solutions unify corporate directories, automate provisioning processes, and enforce strict Multi-Factor Authentication parameters.</p>
+                <p style="margin-bottom: 0.6rem;">We integrate user lifecycle changes directly with database HRMS systems to trigger auto-revocation loops for departed staff, eliminating security gaps and orphan accounts.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Single Sign-On (Okta, Azure Active Directory, Ping Identity)</li>
+                    <li>Privileged Access Management (CyberArk, BeyondTrust)</li>
+                    <li>Identity Governance & Lifecycle (SailPoint, Saviynt)</li>
+                    <li>Universal Directory Sync & HRMS Automated Connectors</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Zero security incidents due to compromised orphan user log files</li>
+                    <li>90% decrease in manual onboarding ticket queues</li>
+                    <li>Strict compliance verification for SOX and HIPAA audit controls</li>
+                    <li>Unified login portals for improved enterprise user experience</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Synchronized Active Directory pools with Workday HR software for a healthcare provider, securing access states for 12,000+ clinical workers.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=iam" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for SIEM & SOC Operations -->
+        <div class="notebook-doc-panel" id="drawer-soc">
+          <button class="doc-close-btn" onclick="closeDocPanel('soc', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="monitor-play" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              SIEM & SOC Operations
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">SIEM</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">SOC</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Log Analytics</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Alerting</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Establish a dedicated Security Operations Center (SOC) framework combining automated log aggregation (SIEM) with expert security analysis. We monitor logs, correlate anomalies, and execute automated incident response playbooks to quarantine threats.</p>
+                <p style="margin-bottom: 0.6rem;">Our SOC runs continuous alert monitoring, hunting for active threat actors and validating alerts metrics to minimize false alarms.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>SIEM Platforms (Splunk, Microsoft Sentinel, IBM QRadar)</li>
+                    <li>SOAR Playbooks & Quarantining Automations</li>
+                    <li>Threat Intelligence Feeds & Mitre ATT&CK Alignments</li>
+                    <li>Elastic Log Analyzers & Elasticsearch Clusters</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Mean Time to Detect (MTTD) reduced to under 10 minutes</li>
+                    <li>Automated threat isolation preventing lateral network jumps</li>
+                    <li>Comprehensive compliance logging mapping to ISO 27001 mandates</li>
+                    <li>Peace of mind backed by 24/7 security analysts validation</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Engineered a Sentinel SIEM deployment for a fintech firm, aggregating 500 million daily log entries with auto-isolation configurations.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=soc" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Cloud Workload Security -->
+        <div class="notebook-doc-panel" id="drawer-cloud">
+          <button class="doc-close-btn" onclick="closeDocPanel('cloud', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="cloud-lock" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Cloud Workload Security
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">AWS/Azure</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">CSPM</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Kubernetes</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">API Shield</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Protect cloud workloads, serverless services, and micro-segmentation routes. We identify misconfigurations, configure access roles, and shield deployment pipelines against credential leakage and compliance drifts.</p>
+                <p style="margin-bottom: 0.6rem;">We harden container clusters and secure API gateways endpoints, ensuring that cloud scaling doesn't expand your attack footprint.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Prisma Cloud, Wiz, Aqua Security Posture Utilities</li>
+                    <li>Kubernetes & Docker Container Hardening</li>
+                    <li>AWS IAM Roles & Azure Security Guardrails</li>
+                    <li>HashiCorp Vault Secrets Management integration</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Zero deployment of misconfigured cloud clusters and public buckets</li>
+                    <li>Unified posture dashboard across multi-cloud infrastructure</li>
+                    <li>Continuous compliance tracking for GDPR and PCI in the cloud</li>
+                    <li>Automated detection of leaked access keys in software repositories</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Implemented runtime workload security for a logistics firm running 400+ microservices on AWS EKS, achieving full CSPM audit approval.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=cloud" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for VAPT Auditing -->
+        <div class="notebook-doc-panel" id="drawer-vapt">
+          <button class="doc-close-btn" onclick="closeDocPanel('vapt', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="shield-check" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              VAPT Auditing
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Pen-Testing</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">OWASP Top 10</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Risk Auditing</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Run comprehensive vulnerability assessments and penetration testing (VAPT) across application portals, web interfaces, and network routes. We discover logical configuration flaws, code injections, and authentication bypasses.</p>
+                <p style="margin-bottom: 0.6rem;">We align all testing parameters with the OWASP Top 10 framework and provide detailed reports featuring step-by-step remediation roadmaps.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Exploitation frameworks (Metasploit, Burp Suite Enterprise)</li>
+                    <li>Vulnerability Scanners (Tenable Nessus, Qualys)</li>
+                    <li>Logical parameter check probes & custom testing APIs</li>
+                    <li>Kali Linux diagnostic suites & network utilities</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Logical software weaknesses identified and remediated before exploit</li>
+                    <li>Clear, auditor-ready vulnerability compliance sign-off</li>
+                    <li>Training for dev teams on preventing recurring code vulnerabilities</li>
+                    <li>Prioritized remediation roadmap based on CVSS scoring metrics</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Executed an external black-box VAPT audit for an e-commerce platform, correcting 4 critical API validation bypasses before launch.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=vapt" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Endpoint Security -->
+        <div class="notebook-doc-panel" id="drawer-endpoint">
+          <button class="doc-close-btn" onclick="closeDocPanel('endpoint', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="shield" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Endpoint Security
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">EDR/XDR</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Antivirus</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Posture Check</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Remote Wipe</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Secure distributed end-user devices against zero-day exploits, phishing payload launches, and local data leaks. We deploy agent-based posture checks and EDR utilities to monitor processes in real-time.</p>
+                <p style="margin-bottom: 0.6rem;">Laptops and remote workstations must validate compliance (e.g. active disk encryption and patch level check) before gaining tunnel connections to corporate databases.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>CrowdStrike Falcon, Defender for Endpoint, SentinelOne</li>
+                    <li>Mobile Device Management posture controls (Intune, Jamf)</li>
+                    <li>Automated ransomware signatures monitoring tools</li>
+                    <li>Remote workstation isolation and memory sanitization utilities</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Ransomware process execution intercepted and killed in under 3 seconds</li>
+                    <li>99% compliance compliance for remote devices disk encryption</li>
+                    <li>Immediate posture-based access block for unpatched employee laptops</li>
+                    <li>Remote sanitization capability for lost or compromised company hardware</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Rolled out CrowdStrike EDR across 2,500 remote office endpoints, configuring auto-isolation rules for process anomalies.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=endpoint" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Cyber Security Transformation -->
+        <div class="notebook-doc-panel" id="drawer-transformation">
+          <button class="doc-close-btn" onclick="closeDocPanel('transformation', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="refresh-cw" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Cyber Security Transformation
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Zero-Trust</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">ZTNA</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Migration</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Roadmap</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Transition your enterprise security architecture away from outdated castle-and-moat perimeter models and into a robust Zero-Trust network architecture (ZTNA). We design roadmap routes, update policies, and integrate components.</p>
+                <p style="margin-bottom: 0.6rem;">We coordinate with stakeholders to define granular access parameters, ensuring minimal business disruption during infrastructure shifts.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>ZTNA Gateways & Secure Access Service Edge (SASE) models</li>
+                    <li>Micro-segmentation routing rules configurations</li>
+                    <li>Telemetry correlation engines & posture policy definitions</li>
+                    <li>Legacy database access wrappers integration</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Successful migration to ZTNA with zero business down-times</li>
+                    <li>Drastic reduction in target attack surface across segments</li>
+                    <li>Improved security visibility and posture monitoring indexes</li>
+                    <li>Standardized onboarding and access policies for contractors</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Designed the multi-year Zero-Trust transformation strategy for a manufacturing conglomerate, replacing legacy VPN nodes with ZTNA.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=transformation" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Managed Security (MSSP) -->
+        <div class="notebook-doc-panel" id="drawer-managed">
+          <button class="doc-close-btn" onclick="closeDocPanel('managed', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="shield" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Managed Security (MSSP)
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">24/7 MSSP</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Firewall Admin</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Threat Feeds</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">SLAs</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Offload the complexity of operational security checks to our certified engineers. We handle firewall rule updates, software patching, directory auditing, and logs archiving under strict SLAs.</p>
+                <p style="margin-bottom: 0.6rem;">Our MSSP portal provides transparent dashboard logs and monthly reports outlining security changes, policy validations, and system health checks.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Firewall Management Tools (Palo Alto Panorama, FortiManager)</li>
+                    <li>Log archiving databases & compliance data storage</li>
+                    <li>Automated policy auditing engines & signature deployment scripts</li>
+                    <li>Vulnerability feeds correlation & patch management utilities</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Continuous operational compliance matching security framework mandates</li>
+                    <li>Reduced operational overhead for internal security engineering teams</li>
+                    <li>Guaranteed response metrics within SLA timeframes</li>
+                    <li>Routine, automated validation reviews of system access logs</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Managed firewall operations and continuous security rule auditing for a multi-tenant logistics framework, keeping rulebases audited monthly.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=managed" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Network Support Operations -->
+        <div class="notebook-doc-panel" id="drawer-netsupport">
+          <button class="doc-close-btn" onclick="closeDocPanel('netsupport', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="network" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Network Support Operations
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Routing/Switching</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Load Balancing</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">HA Setup</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">SD-WAN</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Ensure maximum network uptime with professional support for routers, switches, and load balancers. We configure network paths, optimize bandwidth allocations, and monitor hardware lifecycles.</p>
+                <p style="margin-bottom: 0.6rem;">We design and configure failover configurations to enable automated rerouting during link outages, avoiding downtime for business channels.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Core switches & routers (Cisco Catalyst/Nexus, Juniper, Arista)</li>
+                    <li>Load Balancers (F5 BIG-IP, Citrix ADC, HAProxy)</li>
+                    <li>SD-WAN configurations & virtual private network gateways</li>
+                    <li>BGP routing setups & OSPF failover metrics configurations</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>99.99% network availability across all corporate campuses</li>
+                    <li>Reduced latency for critical business portal traffic paths</li>
+                    <li>Optimized WAN connection costs using intelligent SD-WAN routing</li>
+                    <li>Fast detection and replacement of failing core switch nodes</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Optimized load-balancing rules and core routing switches for a digital payment gateway, ensuring 100% availability during sales spikes.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=netsupport" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Security Engineering Administration -->
+        <div class="notebook-doc-panel" id="drawer-secsupport">
+          <button class="doc-close-btn" onclick="closeDocPanel('secsupport', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="settings" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Security Engineering Administration
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Agent Deploy</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Policy Audit</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">SysAdmin</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Health Check</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Support the tools that protect your environment. We configure security agents, update client profiles, coordinate vulnerability scans, and maintain server infrastructure databases.</p>
+                <p style="margin-bottom: 0.6rem;">Our administrators check configuration parameters and monitor agent coverage across all servers and remote workstations, avoiding security gaps.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Host-based IPS configurations and agent health status logs</li>
+                    <li>Certificate management and PKI authority infrastructure administration</li>
+                    <li>Endpoint security policy validation tools</li>
+                    <li>Backup servers databases & log storage systems configuration</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>100% operational health across security tool systems</li>
+                    <li>Full coverage of security monitoring agents across endpoints</li>
+                    <li>Secure management of digital encryption keys and certifications</li>
+                    <li>Fast remediation of failing security utility hosts</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Administered a global antivirus agent redeployment for a retail customer, patching agent compliance to 99.8% in 30 days.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=secsupport" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Security Lifecycle Transitions -->
+        <div class="notebook-doc-panel" id="drawer-transition">
+          <button class="doc-close-btn" onclick="closeDocPanel('transition', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="refresh-cw" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Security Lifecycle Transitions
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Migration</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Handoff Check</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Upgrades</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Asset Lifecycle</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Guide your security operations through hardware end-of-life migrations, software upgrades, and server room asset changes. We execute structured handoff plans and document operational status.</p>
+                <p style="margin-bottom: 0.6rem;">We verify that security posture is maintained during migrations and run post-upgrade checklists to confirm rule configurations.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Data center migration checklists & rule translation tools</li>
+                    <li>Secure data wipes utilities & asset disposal logging</li>
+                    <li>Configuration rollback databases & system verification tools</li>
+                    <li>Knowledge base wikis & operator runbooks templates</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Zero security downtime during data center and firewall transitions</li>
+                    <li>Clean documentation for compliance auditors tracing asset disposal</li>
+                    <li>Rapid onboarding of operational support teams on upgraded tools</li>
+                    <li>Validated configurations post-migration with zero legacy security leaks</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Managed the migration of security controls for a cloud data transfer project, verifying access profiles during migration routes.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=transition" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Facility Management Systems -->
+        <div class="notebook-doc-panel" id="drawer-fms">
+          <button class="doc-close-btn" onclick="closeDocPanel('fms', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="server" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Facility Management Systems
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">DC Environment</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Power Sync</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">HVAC Monitoring</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Wiring Logs</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Support the physical facilities that hold enterprise hardware. We structure server room heating metrics (HVAC), backup power generator transfer logs, and physical wiring configurations.</p>
+                <p style="margin-bottom: 0.6rem;">Our facilities operators verify that backup power and environmental alarms are tested monthly to prevent system overheating.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Uninterruptible Power Supply systems (UPS / Diesel generators)</li>
+                    <li>Server rack environmental monitoring (temperature, humidity alarms)</li>
+                    <li>Structured copper and optical fiber cabling layouts</li>
+                    <li>FM200 clean agent physical fire suppression logs</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Continuous server operations during city grid power blackouts</li>
+                    <li>Zero hardware failures due to server rack overheating</li>
+                    <li>Clean, labeled wiring logs for fast hardware troubleshooting</li>
+                    <li>Standardized environmental records matching ISO facility mandates</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Engineered the physical cabling and power failover system for a corporate server room host, ensuring uninterrupted power metrics.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=fms" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Security Service Delivery -->
+        <div class="notebook-doc-panel" id="drawer-delivery">
+          <button class="doc-close-btn" onclick="closeDocPanel('delivery', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="check-circle" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Security Service Delivery
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">SLA Audits</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Reporting</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Escalations</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Posture Review</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Coordinate operational delivery reviews to track SLA response and system health checks. We present quarterly security summaries, analyze tickets patterns, and resolve escalations paths.</p>
+                <p style="margin-bottom: 0.6rem;">We verify that operations meet corporate compliance guidelines and track support ticket statistics to drive improvement.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Service management dashboards (ServiceNow, Jira Service Desk)</li>
+                    <li>SLA compliance calculators & response metrics dashboards</li>
+                    <li>Quarterly executive reporting templates & posture slide decks</li>
+                    <li>Customer escalations tracking & priority logs databases</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Consistently exceeded 98.5% ticket resolution SLA targets</li>
+                    <li>Clear visibility into recurring incident patterns for system fixes</li>
+                    <li>Direct access to senior security leads for major escalations</li>
+                    <li>Continuous feedback loop driving proactive system improvements</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Oversaw security operations delivery for a transport hub, maintaining incident response times well within SLA targets.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=delivery" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for ID Cards Printing -->
+        <div class="notebook-doc-panel" id="drawer-idcard">
+          <button class="doc-close-btn" onclick="closeDocPanel('idcard', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="contact" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              ID Cards Printing
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">PVC Badges</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Lanyards</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Barcodes/QR</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">High-Res Print</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> We design and supply high-resolution visual identity badges for schools, corporate hubs, and facilities. We utilize scratch-resistant PVC sheets and thermal printing machinery.</p>
+                <p style="margin-bottom: 0.6rem;">Every badge can print crisp logos, worker photos, barcode logs, or QR codes to sync cleanly with building entrance terminals.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Thermal dye-sublimation PVC identity card printing machinery</li>
+                    <li>Barcode encoding standard formats & high-res vector logo lines</li>
+                    <li>Screen printed neck lanyards matching company hex themes</li>
+                    <li>Rigid card holders and retractable badge reels</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Instant visual verification of employees and guest badges</li>
+                    <li>Durable PVC card bodies that resist bending and scratches</li>
+                    <li>Lanyards customizable to match corporate branding</li>
+                    <li>Easy barcode scanning at access terminals and cafeterias</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Designed and supplied double-sided photo ID cards and branded lanyards for a university campus, covering 8,500 students and staff.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=idcard" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Access Card Systems -->
+        <div class="notebook-doc-panel" id="drawer-accesscard">
+          <button class="doc-close-btn" onclick="closeDocPanel('accesscard', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="credit-card" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Access Card Systems
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">RFID 125KHz</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Mifare 13.56MHz</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Key Encoding</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Fobs/Tags</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> We supply and program contactless radio-frequency identification cards for secure door logs, turnstile barriers, and server rack locks. We format and encode chip sectors properly.</p>
+                <p style="margin-bottom: 0.6rem;">We encrypt smart card sectors utilizing custom keys configurations to prevent unauthorized cloning or card duplication.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Mifare Classic / DESFire 13.56 MHz high security smart chips</li>
+                    <li>Proximity 125 KHz EM cards read-only credentials</li>
+                    <li>RFID encoders and desktop readers programming platforms</li>
+                    <li>Secure keyfobs and adhesive tags for multi-device setups</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Secured building entry doors with zero-copy encrypted cards</li>
+                    <li>Fast contactless entry scans at gates under 0.5 seconds</li>
+                    <li>Ability to write custom facility codes into card memory blocks</li>
+                    <li>Flexible form factors including standard cards, keyfobs, and tags</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Supplied and programmed Mifare smart cards with custom sector keys for an IT park, securing entry turnstiles for 4,000 tenants.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=accesscard" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Biometric Solutions -->
+        <div class="notebook-doc-panel" id="drawer-biometric">
+          <button class="doc-close-btn" onclick="closeDocPanel('biometric', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="fingerprint" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Biometric Solutions
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Face Scanners</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Fingerprint Log</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">HRMS Sync</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Attendance</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Deploy modern biometric identity loggers to automate time, attendance, and access gates verification. We install face recognition terminals, fingerprint readers, and sync tools.</p>
+                <p style="margin-bottom: 0.6rem;">We configure connections to feed employee check-in times directly to HRMS database platforms, automating corporate salary loops.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Contactless facial recognition scanners with mask and liveness checks</li>
+                    <li>Optical and capacitive fingerprint readers terminals</li>
+                    <li>Attendance databases sync services & HRMS software APIs</li>
+                    <li>Biometric templates hashing algorithms for privacy protection</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Complete elimination of buddy punching timecard fraud practices</li>
+                    <li>Automated, error-free attendance records output for finance</li>
+                    <li>Hygienic contactless check-in alternatives using facial scans</li>
+                    <li>Secure storage of hashed, non-recoverable biometric profiles</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Integrated facial recognition terminals with a legacy SAP HRMS system for a manufacturing client, tracking 1,200 shifts workers.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=biometric" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for CCTV Surveillance -->
+        <div class="notebook-doc-panel" id="drawer-cctv">
+          <button class="doc-close-btn" onclick="closeDocPanel('cctv', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="video" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              CCTV Surveillance
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">IP Cameras</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">NVR Storage</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">AI Analytics</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Live Stream</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Implement video surveillance configurations to secure physical perimeters. We install high-definition dome and bullet IP cameras, configure NVR storages, and set up alarm rules.</p>
+                <p style="margin-bottom: 0.6rem;">We integrate motion-detection analytic rules to alert facility managers immediately when activity is spotted in quarantined zones during off-hours.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>HD Network IP Cameras (Dome, Bullet, PTZ, Fisheye)</li>
+                    <li>Network Video Recorders (NVR) with RAID storage arrays</li>
+                    <li>AI Video Analytics (intrusion, line-crossing, object removal)</li>
+                    <li>Secure remote streaming channels & client dashboard apps</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Complete camera coverage of physical facility boundaries and corridors</li>
+                    <li>Months of HD video backup history secured against data corruption</li>
+                    <li>Immediate mobile notification alerts for unauthorized access attempts</li>
+                    <li>Secure remote access feeds for company operations heads</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Deployed a 64-channel IP camera framework and NVR configuration for a warehouse complex, including perimeter line-crossing alarms.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=cctv" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Iris Recognition Systems -->
+        <div class="notebook-doc-panel" id="drawer-iris">
+          <button class="doc-close-btn" onclick="closeDocPanel('iris', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="eye" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Iris Recognition Systems
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Iris Scanners</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Zero-Contact Lock</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">High Security</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Fast Match</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Secure your high-risk cleanrooms, server racks, or executive suites with iris recognition systems. We install infrared scanners, configure lock relays, and manage verification profiles.</p>
+                <p style="margin-bottom: 0.6rem;">Iris scanners capture unique patterns that cannot be copied or shared, providing security levels that surpass standard card keys.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>High precision dual-eye iris scanner locks (wall-mount or gate)</li>
+                    <li>Contactless infrared eye scan cameras with liveness check</li>
+                    <li>Access database sync & physical lock relays control panels</li>
+                    <li>Hashed biometric templates databases with strict encryption</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Highest tier of identity assurance validation for critical rooms access</li>
+                    <li>No risk of access codes theft or keycards sharing behaviors</li>
+                    <li>Fast contactless match processing in under 1 second</li>
+                    <li>Seamless operations even for users wearing safety glasses or gloves</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Secured a pharmaceutical research cleanroom facility entrance utilizing dual-eye iris scanners, validating access states for 120 scientists.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=iris" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Professional Consulting -->
+        <div class="notebook-doc-panel" id="drawer-consulting">
+          <button class="doc-close-btn" onclick="closeDocPanel('consulting', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="users" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Professional Consulting
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Risk Advisory</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">CISO-as-a-Service</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Security Strategy</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Compliance Roadmaps</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> We guide your leadership through technical complexity. We define target security states, draft security budgets roadmaps, and assist CISOs with risk analysis dashboards.</p>
+                <p style="margin-bottom: 0.6rem;">Our consultants identify operational vulnerabilities, align security investments with actual risks, and represent security status to stakeholders.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Risk assessment frameworks (NIST CSF, ISO 27005, FAIR)</li>
+                    <li>Target operating model templates & security charter drafts</li>
+                    <li>CISO-as-a-service advisory dashboards & KPIs reporting templates</li>
+                    <li>Security capability assessment scoring models</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Structured, multi-year security program aligned with business objectives</li>
+                    <li>Optimized allocation of security capital spending to top-priority gaps</li>
+                    <li>Clear understanding of corporate risk indexes for board members</li>
+                    <li>Reduced risk of regulatory non-compliance fines</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Acted as security advisory leads for a utility provider, drafting a multi-year roadmaps route to align operations with critical infrastructure standards.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=consulting" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for SOW Compliance Alignment -->
+        <div class="notebook-doc-panel" id="drawer-sow">
+          <button class="doc-close-btn" onclick="closeDocPanel('sow', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="file-text" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              SOW Compliance Alignment
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">SOW Auditing</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Vendor Risk</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Contract Controls</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Service Validation</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Verify that third-party vendors meet your organization's security standards. We audit Statements of Work (SOW), build vendor validation matrices, and inspect third-party controls.</p>
+                <p style="margin-bottom: 0.6rem;">We verify that vendor systems handle company data securely, preventing supply-chain leaks and database compromises.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Vendor security assessment checklists (SIG, CAIQ, custom templates)</li>
+                    <li>Third-party validation scorecards & contract audits databases</li>
+                    <li>SLA compliance monitoring & reporting trackers</li>
+                    <li>Secure vendor data sharing guardrails validation tools</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Systematic identification of security gaps in vendor agreements</li>
+                    <li>Consistently validated security postures across external suppliers</li>
+                    <li>Lower risk of supply chain security incidents</li>
+                    <li>Standardized onboarding templates for contractor groups</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Managed vendor risk reviews for a transportation hub, auditing security compliance across 40 external system vendors.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=sow" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for Security Policy & SOPs -->
+        <div class="notebook-doc-panel" id="drawer-sop">
+          <button class="doc-close-btn" onclick="closeDocPanel('sop', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="book-open" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              Security Policy & SOPs
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">SOP Writing</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Data Policy</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">Incident Runbooks</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">User Guides</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Standardize security actions. We draft incident runbooks, password management policies, remote work guidelines, and compliance checklists.</p>
+                <p style="margin-bottom: 0.6rem;">We write clear instructions that help employees follow security practices and prepare operations teams to react to alerts.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Incident Response runbooks templates (Ransomware, Phishing, Data Loss)</li>
+                    <li>Corporate data policies (Acceptable Use, Password Management)</li>
+                    <li>Operations verification checklists & audit logging guides</li>
+                    <li>Employee security awareness guides</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Standardized incident actions preventing operational errors</li>
+                    <li>Clean records for compliance audits tracing corporate policies</li>
+                    <li>Improved employee awareness on remote data safety</li>
+                    <li>Clear onboarding policies for new operations engineers</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Drafted a complete incident response SOP manual for a retail customer, reducing incident resolution times by 40%.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=sop" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Document Sheet for GRC Frameworks Compliance -->
+        <div class="notebook-doc-panel" id="drawer-grc">
+          <button class="doc-close-btn" onclick="closeDocPanel('grc', event)">Close Source</button>
+          
+          <div style="margin-top: 1.5rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.75rem;">
+            <span class="badge" style="background: rgba(16, 185, 129, 0.05); color: var(--primary); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Source Document</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: #0f172a; margin-top: 0.4rem; display: flex; align-items: center; gap: 0.4rem;">
+              <i data-lucide="file-check" style="width: 22px; height: 22px; color: var(--primary);"></i>
+              GRC Frameworks Compliance
+            </h3>
+          </div>
+          
+          <div class="doc-content-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+            <div class="service-meta-tags" style="margin-top: 0; margin-bottom: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+              <span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">ISO 27001</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">SOC 2 Ready</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">PCI-DSS</span><span class="service-meta-tag" style="margin-right:0.25rem; font-size:0.7rem; padding:0.15rem 0.5rem; background:rgba(37,99,235,0.05); color:var(--primary); border-radius:4px;">GDPR/HIPAA</span>
+            </div>
+            
+                <p style="margin-bottom: 0.6rem;"><strong>Overview:</strong> Align your operations with international security standards. We run readiness audits, document control implementations, collect audit evidence, and draft risk assessments.</p>
+                <p style="margin-bottom: 0.6rem;">We verify that configurations are compliant, helping your teams prepare for certification audits with third-party reviewers.</p>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Technologies Supported:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>GRC management dashboards (OneTrust, Archer, Vanta, Drata)</li>
+                    <li>ISO 27001 audit checklists & control templates</li>
+                    <li>SOC 2 Trust Services Criteria mapping matrices</li>
+                    <li>PCI-DSS data environment scoping checklists</li>
+                  </ul>
+                </div>
+                <div style="margin-bottom: 0.6rem;">
+                  <strong>Business Outcomes:</strong>
+                  <ul style="padding-left: 1.25rem; margin-top: 0.25rem; margin-bottom: 0.5rem; list-style-type: disc;">
+                    <li>Ready for third-party audits with documented control structures</li>
+                    <li>Higher success rate for ISO and SOC 2 certifications audits</li>
+                    <li>Reduced time spent by team members on gathering audit evidence</li>
+                    <li>Continuous monitoring of GRC parameters across servers</li>
+                  </ul>
+                </div>
+                <p style="margin-bottom: 1rem;"><strong>Use Case:</strong> Led GRC audit readiness for a cloud-service provider, achieving SOC 2 Type II compliance sign-off with zero exceptions.</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="contact.html?service=grc" class="btn btn-primary" style="width: 100%; display: block; text-align: center; font-size: 0.8rem; padding: 0.5rem 1rem; border-radius: 8px;">Schedule Consultation</a>
+                </div>
+            
+          </div>
+        </div>
+        
+    </div>
+
+
+<!-- Premium Dark Footer -->
+<footer class="site-footer" style="position: relative; z-index: 10;">
+  <div class="footer-top">
+    <!-- Column 1: Logo & Info -->
+    <div class="footer-col">
+      <div class="footer-logo" style="display: flex; flex-direction: row; align-items: center; gap: 8px; text-decoration: none; margin-bottom: 1rem;">
+        <img src="images/nxtgen-logo.png" alt="NxtGen Solutions Logo" style="height: 48px; width: 48px; object-fit: contain; border-radius: 50%; display: block; flex-shrink: 0;" />
+        <div style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1;">
+          <span class="logo-nxt" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.35rem; letter-spacing: -0.5px; background: linear-gradient(135deg, #2563EB, #10B981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">NXTGEN</span>
+          <span class="logo-info" style="font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 0.62rem; color: #cbd5e1; letter-spacing: 4px; text-transform: uppercase; margin-top: 1px;">SOLUTIONS</span>
+        </div>
+      </div>
+      <p class="footer-description" style="margin-top: 1rem;">
+        Enterprise Security Implementations & Technology Consulting Partner. Management Team with Over 27 Years of Enterprise Cybersecurity and Technology Consulting Experience.
+      </p>
+    </div>
+    
+    <!-- Column 2: Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    
+    <!-- Column 3: Services & Implementations -->
+    <div class="footer-col">
+      <h3>Services & Implementations</h3>
+      <ul>
+        <li><a href="services.html#card-perimeter">Perimeter Security</a></li>
+        <li><a href="services.html#card-iam">Identity & Access (IAM)</a></li>
+        <li><a href="services.html#card-soc">SIEM & SOC operations</a></li>
+        <li><a href="services.html#card-cloud">Cloud Security</a></li>
+        <li><a href="services.html#card-vapt">VAPT Auditing</a></li>
+        <li><a href="services.html#physical-infra">Physical Security Implementations</a></li>
+        <li><a href="services.html#card-netsupport">Network Support Services</a></li>
+        <li><a href="services.html#card-managed">Managed Security (MSSP)</a></li>
+        <li><a href="services.html#card-consulting">Security Consulting</a></li>
+      </ul>
+    </div>
+    
+    <!-- Column 4: Contact & Hours -->
+    <div class="footer-col">
+      <h3>Contact Info</h3>
+      <p><i data-lucide="phone" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:0.5rem; color:var(--secondary);"></i> +91 99415 88344</p>
+      <p><i data-lucide="mail" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:0.5rem; color:var(--secondary);"></i> <a href="mailto:info@nxt-gen.in" style="color:inherit; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='inherit'">info@nxt-gen.in</a></p>
+      <p><i data-lucide="map-pin" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:0.5rem; color:var(--secondary);"></i> 7/222/P5, V.S. Residency, N.N Palayam, Pattanam, Coimbatore - 641016</p>
+      <p><i data-lucide="clock" style="width:14px; height:14px; display:inline-block; vertical-align:middle; margin-right:0.5rem; color:var(--secondary);"></i> Mon - Sat: 9:00 AM - 6:00 PM</p>
+    </div>
+  </div>
+  
+  <!-- Footer Bottom Copyright Bar -->
+  <div class="footer-bottom-bar">
+    <div class="footer-bottom-container">
+      <p>© 2026 NxtGen-Solutions. All Rights Reserved.</p>
+      <ul class="footer-legal-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating Buttons -->
+<a href="https://wa.me/919941588344" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="contact.html" class="enquiry-float" aria-label="Enquiry Now">
+  <i data-lucide="send" style="width:20px; height:20px;"></i>
+</a>
+
+<script src="js/bg-network.js"></script>
+<script src="js/main.js"></script>
+
+<!-- NotebookLM Workspace Controller Logic -->
+<script>
+  let activeCategoryId = 'cyber-security';
+  let activeSourceSuffix = null;
+  
+  const categoryTitles = {
+    'cyber-security': 'Cyber Security',
+    'managed-support': 'Managed & Support Services',
+    'physical-infra': 'Physical Security Implementations',
+    'consulting-gov': 'Consulting & Governance'
+  };
+
+  // Toggle folders in the Left Sidebar
+  function toggleSidebarFolder(categoryId, event) {
+    if (event) event.stopPropagation();
+    const content = document.getElementById('folder-content-' + categoryId);
+    const header = document.getElementById('folder-header-' + categoryId);
+    
+    if (!content || !header) return;
+    const isOpen = content.classList.contains('open');
+    
+    // Close all folder contents and reset active states
+    document.querySelectorAll('.sidebar-folder-content').forEach(c => {
+      c.classList.remove('open');
+    });
+    document.querySelectorAll('.sidebar-folder-header').forEach(h => {
+      h.classList.remove('active');
+      const chevron = h.querySelector('.folder-chevron');
+      if (chevron) chevron.style.transform = '';
+    });
+    
+    if (!isOpen) {
+      content.classList.add('open');
+      header.classList.add('active');
+      const chevron = header.querySelector('.folder-chevron');
+      if (chevron) chevron.style.transform = 'rotate(180deg)';
+      
+      // Load the mind-map category nodes group
+      switchCategoryMap(categoryId);
+    }
+  }
+
+  // Switch the active Mind Map category view
+  function switchCategoryMap(categoryId) {
+    if (activeCategoryId === categoryId) return;
+    
+    // Update central node title text
+    const centerNode = document.getElementById('workspace-center-node');
+    if (centerNode) {
+      centerNode.textContent = categoryTitles[categoryId] || 'Security Category';
+    }
+    
+    // Toggle node groups display
+    document.querySelectorAll('.category-nodes-group').forEach(group => {
+      group.style.display = 'none';
+    });
+    
+    const activeGroup = document.getElementById('nodes-' + categoryId);
+    if (activeGroup) {
+      activeGroup.style.display = 'block';
+    }
+    
+    activeCategoryId = categoryId;
+    
+    // Reset active nodes and close any active document drawer
+    closeAllDocDrawers();
+    
+    // Recalculate and draw connection paths
+    setTimeout(() => {
+      drawSVGConnectionPaths(categoryId);
+    }, 50);
+  }
+
+  // Draw connecting SVG paths
+  function drawSVGConnectionPaths(categoryId) {
+    const svg = document.getElementById('workspace-svg-lines');
+    const centerNode = document.getElementById('workspace-center-node');
+    const activeGroup = document.getElementById('nodes-' + categoryId);
+    
+    if (!svg || !centerNode || !activeGroup || activeGroup.style.display === 'none') return;
+    
+    svg.innerHTML = ''; // clear paths
+    
+    // Center position
+    const cx = centerNode.offsetLeft + centerNode.offsetWidth / 2;
+    const cy = centerNode.offsetTop + centerNode.offsetHeight / 2;
+    
+    const childNodes = activeGroup.querySelectorAll('.notebook-child-node');
+    
+    childNodes.forEach(node => {
+      const nx = node.offsetLeft + node.offsetWidth / 2;
+      const ny = node.offsetTop + node.offsetHeight / 2;
+      
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', `M ${cx} ${cy} L ${nx} ${ny}`);
+      path.setAttribute('class', 'notebook-path');
+      path.setAttribute('id', 'path-' + node.id);
+      svg.appendChild(path);
+      
+      if (node.classList.contains('active')) {
+        path.classList.add('active');
+      }
+    });
+  }
+
+  // Select a source item (either from Sidebar or Mind-Map click)
+  function selectSourceNode(suffix, event) {
+    if (event) event.stopPropagation();
+    
+    const nodeEl = document.getElementById('node-' + suffix);
+    if (!nodeEl) return;
+    
+    const parentGroup = nodeEl.closest('.category-nodes-group');
+    if (parentGroup) {
+      const catId = parentGroup.id.replace('nodes-', '');
+      if (activeCategoryId !== catId) {
+        // Open sidebar folder and load category map first
+        const content = document.getElementById('folder-content-' + catId);
+        if (content && !content.classList.contains('open')) {
+          toggleSidebarFolder(catId);
+        }
+      }
+    }
+    
+    // Highlight sidebar item
+    document.querySelectorAll('.sidebar-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    const sidebarItem = document.getElementById('card-' + suffix);
+    if (sidebarItem) {
+      sidebarItem.classList.add('active');
+      const folderContent = sidebarItem.closest('.sidebar-folder-content');
+      if (folderContent && !folderContent.classList.contains('open')) {
+        const catId = folderContent.id.replace('folder-content-', '');
+        toggleSidebarFolder(catId);
+      }
+    }
+    
+    // Highlight node element and update path highlights
+    document.querySelectorAll('.notebook-child-node').forEach(node => {
+      node.classList.remove('active');
+    });
+    nodeEl.classList.add('active');
+    
+    // Set active path highlight
+    document.querySelectorAll('.notebook-path').forEach(p => {
+      p.classList.remove('active');
+    });
+    const activePath = document.getElementById('path-node-' + suffix);
+    if (activePath) {
+      activePath.classList.add('active');
+    }
+    
+    // Hide guide overlay
+    const guide = document.getElementById('workspace-guide-overlay');
+    if (guide) guide.style.opacity = '0';
+    
+    // Close other open documents & slide in the new source panel
+    closeAllDocDrawers();
+    
+    const drawer = document.getElementById('drawer-' + suffix);
+    if (drawer) {
+      drawer.classList.add('open');
+      activeSourceSuffix = suffix;
+      
+      const mapArea = document.querySelector('.notebook-map-area');
+      if (mapArea && window.innerWidth > 992) {
+        mapArea.style.paddingRight = '440px';
+        setTimeout(() => {
+          drawSVGConnectionPaths(activeCategoryId);
+        }, 450);
+      }
+    }
+  }
+
+  // Close source document panel
+  function closeDocPanel(suffix, event) {
+    if (event) event.stopPropagation();
+    const drawer = document.getElementById('drawer-' + suffix);
+    if (drawer) {
+      drawer.classList.remove('open');
+    }
+    
+    activeSourceSuffix = null;
+    
+    const nodeEl = document.getElementById('node-' + suffix);
+    if (nodeEl) nodeEl.classList.remove('active');
+    
+    const activePath = document.getElementById('path-node-' + suffix);
+    if (activePath) activePath.classList.remove('active');
+    
+    const sidebarItem = document.getElementById('card-' + suffix);
+    if (sidebarItem) sidebarItem.classList.remove('active');
+    
+    const mapArea = document.querySelector('.notebook-map-area');
+    if (mapArea) {
+      mapArea.style.paddingRight = '0';
+      setTimeout(() => {
+        drawSVGConnectionPaths(activeCategoryId);
+      }, 450);
+    }
+    
+    const guide = document.getElementById('workspace-guide-overlay');
+    if (guide) guide.style.opacity = '1';
+  }
+
+  // Close all open drawers
+  function closeAllDocDrawers() {
+    document.querySelectorAll('.notebook-doc-panel').forEach(d => {
+      d.classList.remove('open');
+    });
+    activeSourceSuffix = null;
+    
+    const mapArea = document.querySelector('.notebook-map-area');
+    if (mapArea) {
+      mapArea.style.paddingRight = '0';
+    }
+  }
+
+  // Open/Close chat assistant
+  function toggleChatPanel() {
+    const chatPanel = document.getElementById('assistant-chat-panel');
+    if (chatPanel) {
+      chatPanel.classList.toggle('open');
+    }
+  }
+
+  function closeChatPanel(event) {
+    if (event) event.stopPropagation();
+    const chatPanel = document.getElementById('assistant-chat-panel');
+    if (chatPanel) {
+      chatPanel.classList.remove('open');
+    }
+  }
+
+  // Predefined consulting chips triggers
+  function handleChipConsult(type) {
+    let sourceName = "General Security";
+    if (activeSourceSuffix) {
+      const sideItem = document.getElementById('card-' + activeSourceSuffix);
+      if (sideItem) {
+        sourceName = sideItem.querySelector('span').textContent.trim();
+      }
+    }
+    
+    let question = "";
+    if (activeSourceSuffix) {
+      if (type === 'overview') question = `Explain the implementation details of ${sourceName}.`;
+      else if (type === 'technologies') question = `What technologies are supported for ${sourceName}?`;
+      else if (type === 'outcomes') question = `What are the business outcomes for ${sourceName}?`;
+      else if (type === 'case') question = `Provide a use case study for ${sourceName}.`;
+    } else {
+      question = "Summarize the primary security implementations portfolios.";
+    }
+    
+    triggerConsultationReply(question, type);
+  }
+
+  function handleChatKeyPress(event) {
+    if (event.key === 'Enter') {
+      submitCustomChat();
+    }
+  }
+
+  function submitCustomChat() {
+    const input = document.getElementById('assistant-chat-input');
+    if (!input || !input.value.trim()) return;
+    
+    const text = input.value.trim();
+    input.value = '';
+    
+    let type = 'general';
+    if (text.toLowerCase().includes('tech') || text.toLowerCase().includes('support')) type = 'technologies';
+    else if (text.toLowerCase().includes('outcome') || text.toLowerCase().includes('result')) type = 'outcomes';
+    else if (text.toLowerCase().includes('case') || text.toLowerCase().includes('example')) type = 'case';
+    else if (text.toLowerCase().includes('explain') || text.toLowerCase().includes('detail') || text.toLowerCase().includes('what is')) type = 'overview';
+    
+    triggerConsultationReply(text, type);
+  }
+
+  function triggerConsultationReply(question, type) {
+    const chatPanel = document.getElementById('assistant-chat-panel');
+    const chatHistory = document.getElementById('chat-history');
+    const typingIndicator = document.getElementById('chat-typing-indicator');
+    
+    if (!chatPanel || !chatHistory) return;
+    
+    chatPanel.classList.add('open');
+    
+    const userMsg = document.createElement('div');
+    userMsg.className = 'chat-msg user';
+    userMsg.innerHTML = `<div class="chat-msg-header">User</div>${question}`;
+    chatHistory.appendChild(userMsg);
+    
+    chatHistory.scrollTop = chatHistory.scrollHeight;
+    
+    if (typingIndicator) typingIndicator.style.display = 'block';
+    
+    setTimeout(() => {
+      if (typingIndicator) typingIndicator.style.display = 'none';
+      
+      let response = "";
+      
+      if (activeSourceSuffix) {
+        const drawer = document.getElementById('drawer-' + activeSourceSuffix);
+        if (drawer) {
+          const bodyText = drawer.querySelector('.doc-content-body').innerHTML;
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = bodyText;
+          
+          if (type === 'overview') {
+            const overviewP = Array.from(tempDiv.querySelectorAll('p')).find(p => p.textContent.includes('Overview:'));
+            response = overviewP ? overviewP.innerHTML.replace('Overview:', '') : "This service focuses on enterprise-grade design, migration, rule auditing, and high-availability validation matching compliance mandates.";
+          } 
+          else if (type === 'technologies') {
+            const uls = tempDiv.querySelectorAll('ul');
+            // Second ul is usually Outcomes, First is Technologies
+            if (uls.length > 0) {
+              response = `Here are the technologies validated and supported for this implementation: <ul style="padding-left:1.25rem; margin-top:0.25rem; list-style-type:disc;">${uls[0].innerHTML}</ul>`;
+            } else {
+              response = "Supported vendor platforms include Palo Alto, Fortinet, Cisco FTD, Check Point, SailPoint, CyberArk, Splunk, Sentinel, and Azure Cloud safeguards.";
+            }
+          }
+          else if (type === 'outcomes') {
+            const uls = tempDiv.querySelectorAll('ul');
+            if (uls.length > 1) {
+              response = `Implementing this service drives key business outcomes: <ul style="padding-left:1.25rem; margin-top:0.25rem; list-style-type:disc;">${uls[1].innerHTML}</ul>`;
+            } else if (uls.length > 0) {
+              response = `Key benefits and outcomes: <ul style="padding-left:1.25rem; margin-top:0.25rem; list-style-type:disc;">${uls[0].innerHTML}</ul>`;
+            } else {
+              response = "Key benefits are reduced attack surface, automated lifecycle updates, optimized incident resolution times, and clean compliance reporting.";
+            }
+          }
+          else if (type === 'case') {
+            const caseP = Array.from(tempDiv.querySelectorAll('p')).find(p => p.textContent.includes('Use Case:'));
+            response = caseP ? caseP.innerHTML.replace('Use Case:', '') : "Ideal for scaling environments, segmenting multi-tenant databases, secures financial trading endpoints, or supporting major digital transformations.";
+          }
+          else {
+            response = "I've analyzed the active source document. It details critical security implementations including technical architecture migration, continuous signature audits, and strict compliance alignment.";
+          }
+        }
+      } else {
+        response = "NxtGen-Solutions operates as a premier Cybersecurity Partner. We advise on four segments: Cyber Security, Managed Services, Physical Protection, and Consulting Governance. Please select a specific source node or sidebar folder item to analyze its detailed parameters.";
+      }
+      
+      const botMsg = document.createElement('div');
+      botMsg.className = 'chat-msg bot';
+      botMsg.innerHTML = `<div class="chat-msg-header">Assistant</div>${response}`;
+      chatHistory.appendChild(botMsg);
+      
+      chatHistory.scrollTop = chatHistory.scrollHeight;
+    }, 1200);
+  }
+
+  // Initialize layout on load
+  window.addEventListener('DOMContentLoaded', () => {
+    const content = document.getElementById('folder-content-cyber-security');
+    const header = document.getElementById('folder-header-cyber-security');
+    if (content && header) {
+      content.classList.add('open');
+      header.classList.add('active');
+      const chevron = header.querySelector('.folder-chevron');
+      if (chevron) chevron.style.transform = 'rotate(180deg)';
+    }
+    
+    setTimeout(() => {
+      drawSVGConnectionPaths('cyber-security');
+    }, 300);
+  });
+
+  window.addEventListener('load', () => {
+    handleHashDeepLink();
+  });
+
+  window.addEventListener('resize', () => {
+    drawSVGConnectionPaths(activeCategoryId);
+  });
+
+  // Deep link handling for folders and nodes
+  function handleHashDeepLink() {
+    const hash = window.location.hash;
+    if (!hash) return;
+    
+    let target = hash.substring(1);
+    if (target.startsWith('card-')) {
+      target = target.replace('card-', '');
+    }
+    
+    const nodeEl = document.getElementById('node-' + target);
+    if (nodeEl) {
+      selectSourceNode(target);
+      return;
+    }
+    
+    const folderHeader = document.getElementById('folder-header-' + target);
+    if (folderHeader) {
+      const content = document.getElementById('folder-content-' + target);
+      if (content && !content.classList.contains('open')) {
+        toggleSidebarFolder(target);
+      }
+    }
+  }
+
+  window.addEventListener('hashchange', handleHashDeepLink);
+</script>
+</body>
+</html>
