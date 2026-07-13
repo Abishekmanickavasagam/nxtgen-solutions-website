@@ -48,7 +48,7 @@
 }
 
 .logo-gradient {
-  font-size: 1.8rem;
+  font-size: 1.58rem !important;
   font-weight: 800;
   color: var(--primary);
 }
@@ -461,7 +461,7 @@ header {
 .logo-nxt {
   font-family: 'Outfit', sans-serif;
   font-weight: 800;
-  font-size: 1.35rem;
+  font-size: 1.58rem !important;
   letter-spacing: -0.5px;
   color: var(--primary);
   display: inline-block;
@@ -475,7 +475,7 @@ header {
 .logo-info {
   font-family: 'Outfit', sans-serif;
   font-weight: 500;
-  font-size: 0.62rem;
+  font-size: 0.72rem !important;
   color: #64748B;
   letter-spacing: 4px;
   text-transform: uppercase;
