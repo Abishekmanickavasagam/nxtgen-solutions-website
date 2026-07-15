@@ -2670,7 +2670,6 @@ form {
   flex-shrink: 0;
   box-shadow: 0 10px 30px rgba(37, 99, 235, 0.18);
   border: 1px solid rgba(37, 99, 235, 0.15);
-  animation: floatBubble1 8s infinite ease-in-out alternate;
 }
 
 .index-hero-brand-text {
