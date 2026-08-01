@@ -569,6 +569,10 @@ header {
 }
 
 @media (max-width: 992px) {
+  .navbar .logo {
+    margin-left: 0 !important;
+  }
+
   .navbar .menu-toggle {
     display: flex;
   }
@@ -2886,6 +2890,7 @@ form {
 
   .index-hero-brand-group {
     flex-direction: column;
+    align-items: center !important;
     justify-content: center;
     gap: 15px;
     margin-bottom: 1.5rem;
@@ -6678,4 +6683,19 @@ form {
   background: var(--primary) !important;
   color: #ffffff !important;
   border-color: var(--primary) !important;
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    height: 46px !important;
+    width: 46px !important;
+  }
+  .logo-nxt {
+    font-size: 1.25rem !important;
+  }
+  .logo-info {
+    font-size: 0.62rem !important;
+    letter-spacing: 2px !important;
+    margin-right: -2px !important;
+  }
 }
